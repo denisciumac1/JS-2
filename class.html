@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="content">
+
+</div>
+
+<script type="text/javascript">
+   //declaram o clasa
+    class CustomButton {
+     constructor(text, color ="gray", background ="black"){
+        this.text = text
+        this.color = color
+        this.background = background
+     }
+      render(){
+         var button = document.createElement ('button')
+         button.innerText = this.text
+         button.style.color = this.color
+         button.style.background = this.background
+
+         return button
+      }
+    }
+   //  extindem class CustomButton
+    class RoundedCustomButton extends CustomButton{
+      //supraincarcam metoda render() -revoltat!!!!!!
+      render(){
+            var button = super.render()
+            button.style.borderRadius = "15px"
+            return button
+         }
+   }
+
+   class BigCustomButton extends CustomButton{
+      // +15px padding
+      render(){
+            var button = super.render()
+            button.style.padding = "15px"
+            return button
+         }
+   }
+    //creeam niste obiecte Din aceasta clasa
+    var cb3 = new RoundedCustomButton("black")
+    var cb1 = new CustomButton("OK", "white", "green")
+    var cb2 = new CustomButton("DELETE", "white", "red")
+    var cb4 = new BigCustomButton("big")
+   //  var content = document.getElementById("content")
+   //  content.innerHTML = cb3.render() + cb1.render() + cb2.render()
+   content.appendChild( cb3.render() )
+   content.appendChild( cb1.render() )
+   content.appendChild( cb2.render() )
+   content.appendChild( cb4.render() )
+   // console.log( cb1.render() , cb2.render() )
+
+</script>
+</body>
+</html>
