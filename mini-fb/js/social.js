@@ -1,4 +1,4 @@
-//modulul principal -logica d ebaza a retelei
+//modulul principal -logica de ebaza a retelei
 //lista utilizatorilor din Fg
 var users = []
 
@@ -19,12 +19,14 @@ function showUsers(){
 
 }
 generateUsers()
-
 users[0].addFriend(users[1])
 users[0].addFriend(users[1])
 users[0].addFriend(users[1])
 users[0].addFriend(users[1])
 users[0].addFriend(users[2])
+users[0].addFriend(users[2])
+users[0].addFriend(users[3])
+users[0].addFriend(users[3])
 showUsers()
 // var u = new User ("Ilie iliescu", "1.jpg", "m", "1919-01-01", "Maldiva")
 //

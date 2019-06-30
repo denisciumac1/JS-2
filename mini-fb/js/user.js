@@ -1,7 +1,6 @@
 //acest fisier reprezinta un modul
 //care contine o clasa
 
-
 class User {
 
     constructor(fullname, avatar, gender, dob, country){
@@ -50,7 +49,10 @@ class User {
     }
 
     hasFriend(user){
-        var found = this.friends.find( u => u.fullname == user.fullname)  //de desfasurat gender dob...
+        var found = this.friends.find( u => u.fullname == user.fullname)&&
+                                     ( a => a.avatar == user.avatar)    &&
+                                     ( g => g.gender == user.gender)    &&
+                                     ( d => d.dob == user.dob)        
         if( found != undefined )
             return true
         else
@@ -61,7 +63,6 @@ class User {
     if(!this.hasFriend(user)){
         this.friends.push(user)
       }
-
 
     }
 
