@@ -5,12 +5,16 @@ class MenuItem{
         this.text = text; // titlul itemului (textul pe care il vedem)
         this.url = url    // adresa pe care pleaca ast punct din meniu
     }
-    
+
     /**
      * Afiseaza item-ul utilizand DOM (createElement(),appendChild(),etc)
      */
     render(){
-        var item  =  // ???
+        var item  =  document.createElement('li')
+        var a = document.createElement('a')
+            a.href = this.url
+            a.innerText = this.text
+         item.appendChild(a)
         // realizati aici structura HTML:
         /**
          * <li>
@@ -23,7 +27,7 @@ class MenuItem{
     /**
      * Adauga un item in meniu
     */
-    addMenuItem(menuItem){ 
+    addMenuItem(menuItem){
 
     }
 }

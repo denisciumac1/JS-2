@@ -10,7 +10,12 @@ class Menu{
      * Afiseaza meniul utilizand DOM (createElement(),appendChild(),etc)
      */
     render(){
-        var menu  =  // ???
+      var menu = document.createElement('div')
+      var h2 = document.createElement('h2')
+      var ul = document.createElement('ul')
+          h2.innerText = this.name
+       menu.appendChild(h2)
+       menu.appendChild(ul)
         // realizati aici structura HTML:
         /**
          * <div>
@@ -29,7 +34,7 @@ class Menu{
     /**
      * Adauga un item in meniu
     */
-    addMenuItem(menuItem){ 
+    addMenuItem(menuItem){
 
     }
 }
