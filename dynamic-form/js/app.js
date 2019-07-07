@@ -1,8 +1,10 @@
-var register_form = new Form ("create account")
+var content = document.querySelector('#content')
 
-register_form.addField(new TextInput("your name"))
-register_form.addField(new CheckboxInput("I greee with terms"))
+var register_form = new Form ("Create account")
+
+register_form.addField(new TextInput("Your name"))
+register_form.addField(new TextArea("Some text....."))
+register_form.addField(new CheckboxInput("I agree with terms"))
 register_form.addField(new Button("Create"))
 
-
-// ???.appendchild(register_form.render())
+content.appendChild(register_form.render())

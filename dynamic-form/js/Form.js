@@ -1,15 +1,26 @@
 class Form {
     constructor(title) {
         this.title = title
-        this.fields = [] //toate campurile din formular
+        this.fields = []
     }
 
 
-  addField(field){   //objects
-
+  addField(field){
+  this.fields.push(field)
   }
 
-    render(){
 
-    }
+  render(){
+      var label = document.createElement('label')
+      var h2 = document.createElement('h2')
+          h2.innerText = this.title
+      var ul = document.createElement('ul')
+
+      this.fields.forEach(field => ul.appendChild(field.render()))
+
+          label.appendChild(h2)
+          label.appendChild(ul)
+
+      return label
+  }
 }
