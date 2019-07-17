@@ -2,14 +2,42 @@
 class Car {
     // sa se adaoge proprietatea photos=["1.jpg", "2.jpg"]
     constructor (model, photos, year, type, power, worth){
-        this.model  = model
-        this.photos = photos
-        this.year   = year
-        this.type   = type
-        this.power  = power
-        this.worth  = worth
+        this.model    = model
+        this.photos   = photos
+        this._year    = year
+        this._type    = type
+        this._power   = power
+        this.worth    = worth
     }
 
+     get year(){
+     return this._year
+    }
+
+     set year(value){
+      this._year = value
+     }
+// ////////////////////////////////////////////////////////
+     get power(){
+     return this._power
+    }
+
+    set power(value){
+        if(value > 0){
+        this._power =  value
+    }else{
+       console.error("POWER CANNOT BE NEGATIVE!")
+     }
+    }
+// ////////////////////////////////////////////////////////
+    get type(){
+    return this._type
+   }
+
+    set type(value){
+     this._type = value
+    }
+// ////////////////////////////////////////////////////////
 
     log(){
         console.log(`%cCAR`, "color:green; font-size:30px;")
